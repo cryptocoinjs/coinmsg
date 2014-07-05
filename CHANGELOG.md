@@ -1,3 +1,7 @@
+0.1.2 / 2014-07-05
+-----------------
+* removed unused dependency
+
 0.1.1 / 2014-07-05
 ------------------
 * rename to coinmsg
