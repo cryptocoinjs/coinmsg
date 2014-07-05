@@ -62,6 +62,12 @@ provided options.
 
 `curve` is optional and defaults to secp256k1
 
+Test
+----
+
+    $ git clone https://github.com/cryptocoinjs/coinmsg.git && cd coinmsg
+    $ npm install && npm test
+
 License
 -------
 MIT
