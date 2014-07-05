@@ -21,19 +21,46 @@ var coinmsg  = require('coinmsg'),
 var sig = coinmsg.sign(privkey, message) // => Buffer
 
 coinmsg.verify(addr, sig, message) // => true
-coinmsg.verify(addr, sig.toString('base64'), message) // => true
-
-coinmsg.format(addr, sig, message) // returns "BEGIN BITCOIN SIGNED MESSAGE" formatting
 
 // With other cryptocurrencies:
 var coinmsg = require('coinmsg')({
+  coinname: 'DOGECOIN',
   curve: 'secp256k1', // optional, defaults to secp256k1
-  magicPrefix: '\x19Dogecoin Signed Message:\n',
-  coinname: 'DOGECOIN'
+  magicPrefix: '\x19Dogecoin Signed Message:\n'
 })
 
 // ... and use coinmsg as above
 ```
+
+API
+---
+
+### Methods
+
+#### `sign(privkey, message[, compressed])`
+
+Sign `message` with `privkey` and return the signature as a `Buffer`.
+
+`compressed` defaults to true.
+
+#### `verify(addr, sig, message)`
+
+Verify that `sig` is valid signature for the `message` signed by `addr`.
+
+`sig` can be provided as a `Buffer` or base64 string.
+
+#### `format(addr, sig, message)`
+
+Return a "BEGIN BITCOIN SIGNED MESSAGE ..." formatted message.
+
+### Other cryptocurrencies
+
+#### `coinmsg({ coinname: ..., curve: ..., magicPrefix: ... })`
+
+Returns an object with `sign()`, `verify()` and `format()` for the
+provided options.
+
+`curve` is optional and defaults to secp256k1
 
 License
 -------
