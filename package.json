@@ -16,7 +16,6 @@
   "author": "Nadav Ivgi <nadav@bitrated.com>",
   "license": "MIT",
   "dependencies": {
-    "ecurve": "^1.0.0",
     "crypto-hashing": "^0.3.1",
     "coinstring": "^2.0.0",
     "crypto-binary": "^0.1.0",
