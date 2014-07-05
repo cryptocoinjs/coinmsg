@@ -1,0 +1,29 @@
+{
+  "name": "crypto-msgsig",
+  "version": "0.1.0",
+  "description": "Message signing for Bitcoin and other cryptocurrencies",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": "https://github.com/shesek/crypto-msgsig",
+  "keywords": [
+    "bitcoin",
+    "crypto",
+    "message",
+    "signing"
+  ],
+  "author": "Nadav Ivgi <nadav@bitrated.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ecurve": "^1.0.0",
+    "crypto-hashing": "^0.3.1",
+    "coinstring": "^2.0.0",
+    "crypto-binary": "^0.1.0",
+    "ecdsa": "^0.5.3",
+    "bigi": "^1.2.1"
+  },
+  "devDependencies": {
+    "mocha": "^1.20.1"
+  }
+}
