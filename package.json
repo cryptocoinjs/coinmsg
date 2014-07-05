@@ -1,12 +1,12 @@
 {
-  "name": "crypto-msgsig",
+  "name": "coinmsg",
   "version": "0.1.0",
   "description": "Message signing for Bitcoin and other cryptocurrencies",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha"
   },
-  "repository": "https://github.com/shesek/crypto-msgsig",
+  "repository": "https://github.com/cryptocoinjs/coinmsg",
   "keywords": [
     "bitcoin",
     "crypto",
