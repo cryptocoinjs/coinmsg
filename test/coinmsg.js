@@ -4,6 +4,7 @@ var coinmsg  = require('..'),
     eq = assert.equal,
 
     privkey = new Buffer('e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'hex'),
+    pubkey  = new Buffer('03a34b99f22c790c4e36b2b3c2c35a36db06226e41c692fc82b8b56ac1c540c5bd', 'hex'),
     addr_c  = '1F3sAm6ZtwLAUnj7d38pGFxtP3RVEvtsbV',
     addr_uc = '1HZwkjkeaoZfTSaJxDw6aKkxp45agDiEzN',
     message = 'foobar'
@@ -51,5 +52,10 @@ describe('coinmsg', function() {
   it('uses determinstic K', function() {
     eq(coinmsg.sign(privkey, 'hello').toString('hex'),
        coinmsg.sign(privkey, 'hello').toString('hex'))
+  })
+
+  it('works with regular public keys as well', function(){
+    ok(coinmsg.verify(pubkey, coinmsg.sign(privkey, 'hello'), 'hello'))
+    ok(!coinmsg.verify(pubkey, coinmsg.sign(privkey, 'hello'), 'hello2'))
   })
 })

@@ -43,11 +43,14 @@ Sign `message` with `privkey` and return the signature as a `Buffer`.
 
 `compressed` defaults to true.
 
-#### `verify(addr, sig, message)`
+#### `verify(address|pubkey, sig, message)`
 
-Verify that `sig` is valid signature for the `message` signed by `addr`.
+Verify that `sig` is valid signature for the `message` signed by `address|pubkey`.
 
 `sig` can be provided as a `Buffer` or base64 string.
+
+The first argument, `address|pubkey`, can either be an address provided as a `String`,
+or a public key provided as a `Buffer`.
 
 #### `format(addr, sig, message)`
 
